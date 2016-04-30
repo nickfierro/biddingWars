@@ -2,8 +2,8 @@ var _seller = web3.eth.accounts[0];
 var _biddingPeriod = 10;
 var biddingwarsContract = web3.eth.contract([{"constant":false,"inputs":[],"name":"auctionEnd","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"highestBidder","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"highestBid","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"placeBid","outputs":[],"type":"function"},{"inputs":[{"name":"_seller","type":"address"},{"name":"_biddingPeriod","type":"uint256"}],"type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"bidder","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"HighestBidIncreased","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"winner","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"AuctionEnded","type":"event"}]);
 
-var biddingaddress = '';
-var biddingwars = biddingwarsContract.at(biddingaddress);
+var biddingaddress = '0x95fd9acf08f6ffc2cf24ee7ebdb80ca1ae674b00';
+var bidTest = biddingwarsContract.at(biddingaddress);
 
 // var biddingwars = biddingwarsContract.new(
 //    _seller,
