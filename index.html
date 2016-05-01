@@ -1,28 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags-->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>BiddingWars</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <!-- Latest compiled and minified CSS-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css.map" rel="stylesheet">
+    <!-- <script src="js/bootstrap.min.js" type=text/javascript charset=utf-8></script>-->
+    <!-- <link rel="stylesheet" type="text/css" href="css/PINpad.css">-->
+    <script src="js/web3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/web3instance.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/biddingwars.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+      img {
+      width:100%;
+      height:100%
+      }
+    </style>
 
-<script src="js/web3.min.js" type=text/javascript charset=utf-8></script>
-<script>
-var web3 = new Web3();
-web3.setProvider(new web3.providers.HttpProvider('http://10.60.235.102:8545'));
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><h1>BiddingWars<h1></a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><img src="img/logo.png" style="width:128px;height:128px;"></li>
+        </ul>
+        <div class="navbar-collapse collapse">
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-console.log('web3', web3);
-</script>
-<script src="js/biddingwars.js" type=text/javascript charset=utf-8></script>
-</head>
+    <div class="container">
 
-<body>
+      <div class="row">
+        <div class="col-md-6">
+          <img src ="img/house1.png" class="img img-responsive">
+        </div>
+        <div class="col-md-6">
+          <div class ="col-md-6">
+            <a href="https://www.google.com/maps/place/9+24th+St,+Troy,+NY+12180/@42.73885,-73.6684697,17z/data=!3m1!4b1!4m2!3m1!1s0x89de0f903050f099:0xd63ac1e8281de204">
+            <img src="img/housemap1.png" class="img-responsive img" style="width:250px;height:250px">
+            </a>
+          </div>
+          <div class ="col-md-6">
+            <img src="img/inside1.png" class="img-responsive img" style="width:250px;height:250px">
+            </a>
+          </div>
+        </div>
+      </div>
 
-<div>
-  <h1> Welcome To Bidding WARS</h1>
-</div>
+    </div>
 
-</body>
+    <div class="container">
 
-<footer>
+      <div class="row">
+        <div class="col-md-6">
+          <h1>9  24th St,<br>Troy, NY 12180</h1>
+          <p><h4>A must see! Great homes w/ perfect In-law. Unbelievably spacious. Main level boasts 4 BR with 2 full bath's. Many built-in's recently painted throughout. All hardwoods refinished. Basement finished with full bath, kitchenette area, family room and bedroom. Conveniently located in well established neighborhood. Short walk to YMCA &amp; Frear Park.<h4></p>
+        </div>
+        <div class="col-md-6">
+          <table class="table-striped" style="width:100%">
+          <tbody>
+            <tr>
+            	<th><h4>Highest Bidder</h4></th>
+            </tr>
+            <tr>
+            	<td id="highestbidder"></td>
+            </tr>
+            <tr>
+            	<th><h4>Highest Bid</h4></th>
+            </tr>
+            <tr>
+            	<td id="highestbid"></td>
+            </tr>
+            <tr>
+            	<th><h4>Auction Ends on</h4></th>
+            </tr>
+            <tr>
+            	<td id="auctionend"></td>
+            </tr>
+          </tbody>
+        </table>
+          <div class="col-md-6" style="width:100%">
+            <form>
+              <div class="form-group">
+                <label for="inputValue"><h3>Bid Ammount</h3></label>
+                <input type="value" class="form-control" id="inputValue" placeholder="Wei">
+              </div>
+              <button id=submit type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
 
-</footer>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Congratulations!</h4>
+          </div>
+          <div class="modal-body">
+            <p>You won the bid!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
 
+      </div>
+    </div>
+
+  </body>
 </html>
